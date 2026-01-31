@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="pragma" content="no-cache" />
+  <meta http-equiv="expires" content="-1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OXNET</title>
+  <link rel="stylesheet" href="assets/css/style.css?v=12Dec2025-1732" />
+  <script src="assets/js/swal.js"></script>
+
+
+  <script>
+    const server_variables = {
+      "mac-address": "$(mac)",
+      "ip-address": "$(ip)",
+      hostname: "$(hostname)",
+      identity: "$(identity)",
+      "login-by": "$(login-by)",
+      "plain-password": "$(plain-passwd)",
+      "server-address": "$(server-address)",
+      "server-name": "$(server-name)",
+      "ssl-login": "$(ssl-login)",
+    };
+    const api_credentials = {
+      patner: "oxnetfiber",
+      apikey: "5c5aa6bbbc643454413e28beaef5abd7746049c7",
+      nas: "100.106.1.131"
+    };
+
+    let hostname = "$(hostname)";
+    let device_mac_address = "$(mac)";
+    let device_ip_address = "$(ip)";
+    let patner = "oxnetfiber";
+    let apikey = patner_apikey = "5c5aa6bbbc643454413e28beaef5abd7746049c7";
+    let nasname = "100.106.1.131";
+    const destination_instance = "isp.billnasi.com";
+
+    //host
+    let host_server_name = "$(server-name)";
+    let host_server_address = "$(server-address)";
+    //load unused vouchers with v4
+    //preload to avoid customer buying another before utilising previous one
+    //use swal to show successfull fetch
+  </script>
+  <script src="assets/js/daraja.js?v=12Dec2025-1732" defer></script>
+  <!--  
+
+        DATE OF mod 30 - 01 - 2026 16:48:39
+    -->
+
+</head>
+
+<body>
+
+
+  <div class="bgimg">
+    <img src="assets/img/data_center.webp" alt="data center image" />
+  </div>
+
+
+  <div class="wrap animated fadeIn">
+    <div class="main-container payment-options">
+      <div class=" container networkname-banner">
+        <h1 class="ssid">OXNET</h1>
+        <p>Tap <b>"BUY"</b> button on your desired package and follow the prompts.</p>
+        <div>CALL/TEXT: <b class="org-support">+254702644216</b> </div>
+        <div class="device-details">$(mac) $(ip)</div>
+      </div>
+      <div class="container lipa-na-mpesa">
+
+
+        <div id="lipa-na-mpesa">
+          <img id="lipa-na-mpesa-banner" src="assets/img/powered_by.png" alt="" />
+        </div>
+
+
+    <div class="resolve payment resolve-payment">
+          <span id="enter-mpesa-code">Umelipa na haijaconnect? Weka mpesa message hapa.</span>
+
+          <div class="mpesa-code">
+            <label for="mpesa-code">
+              <input oninput="trim_resolve_input()" type="text" required="" name="mpesa-code" id="mpesa-code" placeholder="E.g RKD2A97GKA" class="input-text">
+            </label>
+            <button disabled  type="button" id="search-api-button" class='submit-button'>Search</button>
+          </div>
+          <p class="response-from-search"></p>
+        </div>
+
+        <div class="packages-wrapper" id="packages-go-here-1">
+
+
+           <div class="offer">
+                        <div class="deal-text">10Bob 3hr</div>
+                        <button class="get-deal" data-package="10Bob 3hr" data-amount="10.00" data-productid="GOGEXTRSQT" onclick="show_checkout_modal('10.00', 'KES', '10Bob 3hr', 'GOGEXTRSQT')">BUY
+                        </button>
+                    </div> <div class="offer">
+                        <div class="deal-text">20Bob 10hr</div>
+                        <button class="get-deal" data-package="20Bob 10hr" data-amount="20.00" data-productid="GIW4FNDDCH" onclick="show_checkout_modal('20.00', 'KES', '20Bob 10hr', 'GIW4FNDDCH')">BUY
+                        </button>
+                    </div> <div class="offer">
+                        <div class="deal-text">30bob 24hr</div>
+                        <button class="get-deal" data-package="30bob 24hr" data-amount="30.00" data-productid="1PBL1CPRTM" onclick="show_checkout_modal('30.00', 'KES', '30bob 24hr', '1PBL1CPRTM')">BUY
+                        </button>
+                    </div> <div class="offer">
+                        <div class="deal-text">200Bob 1 Week</div>
+                        <button class="get-deal" data-package="200Bob 1 Week" data-amount="200.00" data-productid="1ZX5A1ZT" onclick="show_checkout_modal('200.00', 'KES', '200Bob 1 Week', '1ZX5A1ZT')">BUY
+                        </button>
+                    </div> <div class="offer">
+                        <div class="deal-text">oxnet 30 days hotspot</div>
+                        <button class="get-deal" data-package="oxnet 30 days hotspot" data-amount="600.00" data-productid="U2ZLBPKRV4" onclick="show_checkout_modal('600.00', 'KES', 'oxnet 30 days hotspot', 'U2ZLBPKRV4')">BUY
+                        </button>
+                    </div>
+
+
+        </div>
+
+        <div class="analog-format-container">
+              <div class="analog-format">
+
+          <h3 class="notice hide">SIGN IN METHOD 2</h3>
+
+          <form action="https://isp.billnasi.com/checkout/hotspot.php" method="post">
+            <input type="hidden" name="synchronous" value="yes">
+            <input type="hidden" name="patner" value="oxnetfiber">
+            <input type="hidden" name="account" value="$(mac)">
+            <input type="hidden" name="ip" value="$(ip)">
+            <input type="hidden" name="nas" value="100.106.1.131">
+            <input type="hidden" name="hostname" value="$(hostname)">
+            <input type="hidden" name="servername" value="$(server-name)">
+            <div id="packages-go-here-2">
+              <label for="analog-productid">Select Package To Buy: </label>
+
+
+              <select required name="productid" id="analog-productid">
+
+
+                <option value="">-- select package --</option>
+               
+
+          <!--select_options_here-->
+          
+              </select>
+            </div>
+            <div>
+              <label for="analog-phonenumber">Phonenumber: </label>
+              <input required type="text" name="phonenumber" id="analog-phonenumber" placeholder="enter phone number">
+            </div>
+
+            <div>
+              <button class='submit-button' type="submit">Submit</button>
+            </div>
+          </form>
+
+        </div>
+
+        </div>
+
+      </div>
+
+      <form class="hide" name="sendin" action="$(link-login-only)" method="post">
+        <input type="hidden" name="username" />
+        <input type="hidden" name="password" />
+        <input type="hidden" name="dst" value="https://youtube.com" />
+        <input type="hidden" name="popup" value="true" />
+      </form>
+
+      <div class="container form">
+
+        $(if trial == 'yes')
+
+        <div class="free-trial-container">
+          <div class="free-trial-link">
+            Free trial available, click
+            <a class="link" href="$(link-login-only)?dst=https://youtube.com&username=T-$(mac-esc)">here</a>
+            to access.
+          </div>
+        </div>
+
+        $(endif)
+
+        <div class="input-type-selector-wrapper">
+          <div class="input-type-selector type-voucher selected"
+            onclick="toggle_voucher_input_selectors(this, 'voucher-only')">VOUCHER</div>
+          <div class="input-type-selector type-user-password"
+            onclick="toggle_voucher_input_selectors(this, 'user-password')">USERNAME AND PASSWORD</div>
+        </div>
+
+        <form name="login1" action="$(link-login-only)" method="post" onsubmit="return duplicate_user_and_password()"
+          id="voucher-only" class="pap-form voucher-only">
+          <input type="hidden" name="dst" value="https://youtube.com" />
+          <input type="hidden" name="popup" value="true" />
+
+
+          <!-- login fields -->
+          <div class="input-rows">
+
+            <div class="input-field">
+              <div class="input">
+                <label for="username">
+                  VOUCHER:
+                </label>
+                <input title="Only numbers (0-9) and letters (A-Za-z) are allowed." class="input-text" required
+                  name="username" id="username-voucher" type="text" value="$(username)" placeholder="enter voucher code"
+                  pattern="^[a-zA-Z0-9]*$" />
+              </div>
+            </div>
+            <!-- input password if neccessary-->
+            <div class="input-field hide">
+              <div class="input">
+                <label for="password">
+                  PASSWORD: (leave blank where necessary)
+                </label>
+                <br />
+                <div>
+                  <input class="input-text-" name="password" type="text" placeholder="enter password"
+                    id="password-voucher" />
+                </div>
+              </div>
+            </div>
+
+            <div class="input-group">
+              <button class="submit-button" type="submit" id="submit-login-voucher">
+                Sign In To Network
+              </button>
+            </div>
+          </div>
+        </form>
+
+        <form name="userpassword" action="$(link-login-only)" method="post" id="user-password"
+          class="pap-form user-password hide">
+          <input type="hidden" name="dst" value="https://youtube.com"/>
+          <input type="hidden" name="popup" value="true"/>
+
+
+          <!-- login fields -->
+          <div class="input-rows">
+
+            <div class="input-field">
+              <div class="input">
+                <label for="username">USERNAME:</label>
+                <input title="Only numbers (0-9) and letters (A-Za-z) are allowed." class="input-text" required name="username" id="username-login" type="text" value="$(username)" placeholder="enter login username" pattern="^[a-zA-Z0-9]*$" />
+              </div>
+            </div>
+            <!-- input password if neccessary-->
+            <div class="input-field ">
+              <div class="input">
+                <label for="password">
+                  PASSWORD: (leave blank if password is not provided)
+                </label>
+                <br />
+                <div>
+                  <input class="input-text" name="password" type="text" placeholder="enter password"
+                    id="password-login" />
+                </div>
+              </div>
+            </div>
+
+            <div class="input-group">
+              <button class="submit-button" type="submit" id="submit-login-user-password">
+                Sign In To Network
+              </button>
+            </div>
+
+
+          </div>
+        </form>
+
+
+        <div id="agree-to-terms">
+          <!--<input checked type="checkbox" name="agree" id="agree" />-->
+
+          TERMS AND CONDITIONS APPLY
+
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <!--     I have read the
+          <a class="link" href="tandc.html" target="_self">Terms and Conditions</a>
+          of this service and I agree to comply with and be bound by
+          them. <p>
+        <a href="./faqs.html" target="_self">Frequently Asked Questions</a>
+      </p>
+      <p>
+      <p>
+        <a href="./tandc.html" target="_self">Terms & Conditions</a>
+      </p>
+    </p>-->
+
+
+      <div class="footer-item">
+
+        <div class="footer-item">For Enquiries </div>
+        <div class="footer-item">
+          <span> Call/SMS/Whatsapp us on </span>
+          <span class="org-support">+254702644216</span>
+        </div>
+      </div>
+      <div class="footer-item">
+        <a href="https://billnasi.com" target="_blank" style="color: orange;">
+          BILLNASI <span class="year" id="show-year"></span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  $(if error)
+  <div class="info" id="error-info-dialog">
+    <p class="close" onclick="document.getElementById('error-info-dialog').remove()">
+      <i>
+        <u>Click here to dismiss.</u>
+      </i>
+    </p>
+    <p class="error-msg">$(error)</p>
+  </div>
+  $(endif)
+</body>
+
+<script>
+
+  function duplicate_user_and_password() {
+    //fo loging in with voucher
+    //vouchers have password same as username
+    document.sendin.username.value = document.login1.username.value;
+    document.sendin.password.value = document.login1.username.value;
+    document.sendin.submit();
+    //console.log(document.sendin);
+
+    return false;
+  }
+
+  let username = false;
+  let password = false;
+  let has_unused_voucher = false;
+
+
+  async function recover_unused_voucher() {
+    let recover_unused_voucher_query = await fetch(`https://${destination_instance}/endpoints/v2/recover_vouchers.php?patner=${patner}&mac=${device_mac_address}&ip=${device_ip_address}&nasname=${nasname}`);
+
+    if (recover_unused_voucher_query.status == 200) {
+      let json_response = await recover_unused_voucher_query.json();
+      console.log("VOUCHER RECOVERY SUCCESS: ", json_response);
+
+      username = await json_response.username;
+      password = await json_response.password;
+      has_unused_voucher = true;
+
+      Swal.fire({
+        title: `1 UNUSED VOUCHER ${username}`,
+        text: 'Click Sign In to continue',
+        icon: 'info',
+        showCancelButton: true,
+        cancelButtonText: 'Cancel',
+        confirmButtonText: 'Sign In',          // plain text (keeps default styling)
+        allowOutsideClick: false,
+      }).then((result) => {
+        if (result.isConfirmed) {
+          // Redirect when the styled button is clicked
+          window.location.href = `http://${hostname}/login?username=${username}&password=${password}&dst=https://youtube.com&popup=true`;
+          // or window.open('https://your-signin-page.com', '_blank');
+        }
+      });
+
+    } else {
+      let json_response = await recover_unused_voucher_query.json();
+      console.log("VOUCHER RECOVERY FAIL: ", json_response);
+    }
+
+  }
+  recover_unused_voucher();
+
+
+  async function get_signin_page_startup_data() {
+    let curl = await fetch(`https://${destination_instance}/endpoints/v2/hs_startup.php?patner=${patner}&api-key=${patner_apikey}&nasname=${nasname}`);
+    //http status code 200 is success
+    //any other is error
+    if (curl.status == 200) {
+      let hs_startup_data = await curl.json();
+      console.log("startup data success");
+
+
+      //  console.log("HEY HEY HEY");
+
+      // console.log(hs_startup_data);
+
+
+      let ResponseCode = hs_startup_data.ResponseCode;//0  for success
+      let networkname = hs_startup_data.networkname;
+      let support_number = hs_startup_data.phone;
+
+      document.querySelectorAll(".org-support").forEach(element => {
+        element.innerText = support_number;
+      });
+
+
+      let number_of_packages = hs_startup_data.count;
+
+      if (number_of_packages > 0) {
+        let div_html = await hs_startup_data.div_html;
+        let select_html = await hs_startup_data.select_html;
+
+        //console.log(div_html, select_html);
+
+        document.getElementById("packages-go-here-1").innerHTML = div_html;
+        document.getElementById("packages-go-here-2").innerHTML = select_html;
+
+      } else {
+        document.getElementById("packages-go-here-1").innerHTML = "NO PACKAGES FOUND";
+        //document.getElementById("packages-go-here-2").remove();
+      }
+
+
+    } else {
+      //if curl error
+      let hs_startup_data = await curl.json();
+      //console.log(hs_startup_data);
+
+      console.log("GETTING STARTUP DATA ERROR");
+
+    }
+  }
+
+  get_signin_page_startup_data();
+
+
+  function toggle_voucher_input_selectors(target, input_form_id) {
+
+    document.querySelectorAll(".input-type-selector").forEach(element => {
+      // console.log(element);
+
+      element.classList.remove("selected");
+    });
+    target.classList.add("selected");
+
+    document.querySelectorAll(".pap-form").forEach(element => {
+      //console.log(element.id, input_form_id);
+
+      if (element.id == input_form_id) {
+        //if current iteration is the form we want to show
+        //remove hide class
+        element.classList.remove("hide");
+        //console.log(element);
+
+      } else {
+        //else add hide class
+        element.classList.add("hide");
+      }
+    });
+
+
+
+  }
+</script>
+
+</html>

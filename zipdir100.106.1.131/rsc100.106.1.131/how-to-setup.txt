@@ -1,0 +1,50 @@
+THE FOLLOWING WILL GUIDE YOU ON HOW TO SET UP A MIKROTIK ROUTER TO USE BILLNASI BILLING system
+
+
+AFTER DOWNLOADING THE ZIP FILE
+
+1. DRAG AND DROP THE HOTSPOT FOLDER TO YOUR MIKROTIK
+2. DRAG AND DROP THE VPN SERVER CERTIFICATES AND KEY TO THE PARENT FOLDER OF YOUR MIKROTIK
+
+
+
+#RUNNING THE SCRIPTS
+GO TO SYSTEM SCRIPTS ON YOUR MIKROTIK CLICK ADD NEW
+
+
+1. NAME IT script1 (MANDATORY)
+
+COPY THE CONTENTS OF ovpn.rsc  and paste them on that script1, click "apply" and run script1 ** run this script only once
+* this creates a new vpn out interface that connects to our server and allows radius to work on your mikrotik
+
+
+#add another script
+2. NAME IT script2 (OPTIONAL)
+
+COPY THE CONTENTS OF pppoe.rsc  and paste them on that script2, click "apply" and run script2 ** run this script only once
+* this will create a pppoe bridge and apply pppoe config on that interface
+
+
+
+#add another script
+3. NAME IT script3 (OPTIONAL)
+
+COPY THE CONTENTS OF hotspot.rsc  and paste them on that script3, click "apply" and run script3 ** run this script only once
+* this will create a hotspot bridge and apply hotspot config on that interface
+
+
+
+################################################################################
+################################################################################
+
+alternatively you can run pppoe and hotspot service under one bridge
+
+#add another script
+4. NAME IT scriptEXTRA (OPTIONAL)
+
+COPY THE CONTENTS OF combined.rsc  and paste them on that scriptEXTRA, click "apply" and run scriptEXTRA ** run this script only once
+* this will create a  PPP_HOTSPOT bridge and apply pppoe AND hotspot configs on that interface
+
+
+
+
